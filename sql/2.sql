@@ -78,3 +78,12 @@ insert into orders (oder_email, customer_id, amount, order_address, shopping_add
 values ('dxyz2022@gmail.com', 4, 4, 'order_address4', 'shipping_address4', order_date, 'active');
 insert into orders (oder_email, customer_id, amount, order_address, shopping_address, order_date, order_status)
 values ('exyz2022@gmail.com', 4, 5, 'order_address', 'shipping_address5', order_date, 'active');
+
+SET @i = 1;
+WHILE @i <= 5
+        DO
+        insert into order_details (order_id, product_id, price, sku, quantity)
+        values (@i, 1, 10 * @i, concat('DGK123', @i), 1);
+        SELECT @i;
+        SET @i = @i + 1;
+        END WHILE;
