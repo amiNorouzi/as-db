@@ -5,6 +5,9 @@ FROM orders
          JOIN products ON order_details.product_id = products.id
 WHERE products.name = 'S1';
 
-SELECT DISTINCT customers.*
+
+SELECT customers.*, COUNT(orders.id) as num_orders
 FROM customers
-         JOIN orders ON customers.id = orders.customer_id;
+         JOIN orders ON customers.id = orders.customer_id
+GROUP BY customers.id
+HAVING num_orders > 1;
