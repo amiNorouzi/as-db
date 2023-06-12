@@ -81,9 +81,9 @@ values ('exyz2022@gmail.com', 4, 5, 'order_address', 'shipping_address5', order_
 
 SET @i = 1;
 WHILE @i <= 5
-        DO
+    DO
         insert into order_details (order_id, product_id, price, sku, quantity)
         values (@i, 1, 10 * @i, concat('DGK123', @i), 1);
         SELECT @i;
         SET @i = @i + 1;
-        END WHILE;
+    END WHILE;

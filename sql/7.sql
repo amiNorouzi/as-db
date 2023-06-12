@@ -4,6 +4,7 @@ WHERE name LIKE '%پفک%';
 
 ALTER TABLE products
     ADD FULLTEXT (name);
+
 SELECT *
 FROM products
 WHERE MATCH (name) AGAINST ('+پفک' IN NATURAL LANGUAGE MODE);

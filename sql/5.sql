@@ -20,10 +20,10 @@ CALL get_n_product(5);
 
 DELIMITER //
 
-CREATE PROCEDURE insert_product(s varchar(64), n varchar(64))
+CREATE PROCEDURE insert_product($sku varchar(64), $name varchar(64))
 BEGIN
    insert into products (sku, name, price, weight, description, thumbnail, image, category, created_at, stock)
-   values (s, n, 1000, 210, 'Samsung', 'phone1.png', 'phone1.png', 'phone', created_at,
+   values ($sku, $name, 1000, 210, 'Samsung', 'phone1.png', 'phone1.png', 'phone', created_at,
            100);
 END //
 

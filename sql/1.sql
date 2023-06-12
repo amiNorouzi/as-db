@@ -1,16 +1,17 @@
 create table products
 (
     id          int primary key auto_increment,
-    sku         varchar(20) unique not null,
-    name        varchar(128)       not null,
-    price       int                not null,
-    weight      int                not null,
-    description text               not null,
-    thumbnail   varchar(128)       not null,
-    image       varchar(128)       not null,
-    category    varchar(64)        not null,
-    created_at  timestamp          not null,
-    stock       int                not null
+    sku         varchar(20)  not null unique,
+    name        varchar(128) not null,
+    price       int          not null,
+    weight      int          not null,
+    description text         not null,
+    thumbnail   varchar(128) not null,
+    image       varchar(128) not null,
+    category    varchar(64)  not null,
+    created_at  timestamp    not null default current_timestamp,
+    stock       int          not null,
+    fulltext (name)
 );
 
 create table customers
