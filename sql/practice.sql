@@ -84,6 +84,14 @@ from options
 where match (option_name) against ('%ip6% *')
 order by score desc;
 
+# ? ------------------------
 select *
 from options
 where id between 3 and 5;
+
+alter table options
+    add column if not exists age int;
+
+select *
+from options
+limit 3;
